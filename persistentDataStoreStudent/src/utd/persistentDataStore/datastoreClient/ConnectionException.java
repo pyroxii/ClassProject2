@@ -12,17 +12,17 @@
 package utd.persistentDataStore.datastoreClient;
 
 /**
- * This exception is thrown when the client detects a problem with the 
- * messages received from the server i.e. a message format problem
+ * This exception is thrown when the client implementation is unable to connect 
+ * to the server e.g. in the event of an IOException. 
  */
-public class ClientException extends Exception
+public class ConnectionException extends Exception
 {
-	public ClientException(String msg)
+	public ConnectionException(String msg)
 	{
 		super(msg);
 	}
 
-	public ClientException(String msg, Throwable ex)
+	public ConnectionException(String msg, Throwable ex)
 	{
 		super(msg, ex);
 	}
