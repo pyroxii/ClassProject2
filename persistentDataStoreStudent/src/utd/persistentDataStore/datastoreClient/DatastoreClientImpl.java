@@ -16,7 +16,7 @@ import java.util.List;
 
 public class DatastoreClientImpl implements DatastoreClient
 {
-	//private static Logger logger = Logger.getLogger(DatastoreClientImpl.class);
+	private static Logger logger = Logger.getLogger(DatastoreClientImpl.class);
 	
 	private InetAddress address;
 	private int port;
