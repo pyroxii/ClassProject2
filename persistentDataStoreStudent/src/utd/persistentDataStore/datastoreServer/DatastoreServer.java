@@ -24,7 +24,7 @@ import utd.persistentDataStore.utils.StreamUtil;
 
 public class DatastoreServer
 {
-	static public final int port = 10023;
+		static public final int port = 10023;
 
 	public void startup() throws IOException
 	{
@@ -67,10 +67,34 @@ public class DatastoreServer
 		}
 	}
 
-	private ServerCommand dispatchCommand(InputStream inputStream) throws ServerException
+	private ServerCommand dispatchCommand(InputStream inputStream) throws ServerException, IOException
 	{
-		// Need to implement
-		return null;
+		String commandString = StreamUtil.readLine(inputStream);
+		
+		if("write".equalsIgnoreCase(commandString)) {
+			ServerCommand serverCommand = new WriteCommand();   
+			return serverCommand; 
+		}
+		
+		else if("read".equalsIgnoreCase(commandString)) {
+			ServerCommand serverCommand = new ReadCommand();  
+			return serverCommand; 
+		}
+		
+		else if("delete".equalsIgnoreCase(commandString)) {
+			ServerCommand serverCommand = new DeleteCommand(); 
+			return serverCommand; 
+		}
+		
+		else if("directory".equalsIgnoreCase(commandString)) {
+			ServerCommand serverCommand = new DirectoryCommand(); 
+			return serverCommand; 
+		}
+		
+		else {
+				throw new ServerException("Unknown" + commandString);
+		}
+		
 	}
 
 	public static void main(String args[])
