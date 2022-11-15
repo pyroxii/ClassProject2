@@ -1,4 +1,4 @@
-/* NOTICE: All materials provided by this project, and materials derived 
+ /* NOTICE: All materials provided by this project, and materials derived 
  * from the project, are the property of the University of Texas. 
  * Project materials, or those derived from the materials, cannot be placed 
  * into publicly accessible locations on the web. Project materials cannot 
